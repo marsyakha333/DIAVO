@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diavo (diavo.id) - Toko Buah Premium, Hampers & Fruitcake Makassar</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #1b4332;
+      --primary-hover: #143225;
+      --secondary: #2d6a4f;
+      --accent: #d4a373;
+      --accent-dark: #b08252;
+      --bg-light: #f7faf8;
+      --surface: #ffffff;
+      --text-dark: #222222;
+      --text-muted: #666666;
+      --border-color: #e5ece7;
+      --danger: #d90429;
+      --success: #25d366;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 6px 20px rgba(0,0,0,0.07);
+      --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+      --radius: 14px;
+      --transition: all 0.25s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* TOP ANNOUNCEMENT */
+    .top-bar {
+      background: var(--primary);
+      color: #e8f5e9;
+      font-size: 13px;
+      padding: 9px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* NAVBAR & LOGO */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 8%;
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand-logo-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-badge {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #1b4332, #2d6a4f);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(27,67,50,0.25);
+    }
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo-main-text {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+    .logo-main-text span {
+      color: var(--accent-dark);
+    }
+    .logo-sub-text {
+      font-size: 10px;
+      font-weight: 600;
+      color: #7b948a;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 14.5px;
+      transition: var(--transition);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .cart-btn {
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .cart-btn:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+    .badge {
+      background: var(--danger);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 50%;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 65px 8% 80px;
+      background: linear-gradient(135deg, #eaf4ed 0%, #ffffff 100%);
+      gap: 40px;
+    }
+    .hero-content {
+      max-width: 580px;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #d8f3dc;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.25;
+      color: var(--primary);
+      margin-bottom: 18px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-main {
+      background: var(--secondary);
+      color: #fff;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(45, 106, 79, 0.25);
+    }
+    .btn-main:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid var(--secondary);
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .btn-outline:hover {
+      background: #e8f5e9;
+    }
+    .hero-img-wrap {
+      position: relative;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-lg);
+      object-fit: cover;
+    }
+    .floating-box {
+      position: absolute;
+      bottom: -15px;
+      left: -20px;
+      background: #fff;
+      padding: 12px 20px;
+      border-radius: 16px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .floating-box i {
+      font-size: 26px;
+      color: var(--accent);
+    }
+
+    /* FEATURES BAR */
+    .features-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 30px 8%;
+      background: #fff;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: #eaf4ed;
+      color: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      font-size: 20px;
+    }
+    .feature-item h4 {
+      font-size: 15px;
+      color: var(--primary);
+      margin-bottom: 2px;
+    }
+    .feature-item p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    /* SECTION HEADER */
+    .section-title {
+      text-align: center;
+      margin: 60px 0 30px;
+      padding: 0 5%;
+    }
+    .section-title h2 {
+      font-size: 30px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .section-title p {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* SEARCH & FILTER BAR */
+    .filter-wrapper {
+      padding: 0 8% 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 14px 45px 14px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--border-color);
+      outline: none;
+      font-size: 14.5px;
+      background: #fff;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .search-box input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(45,106,79,0.15);
+    }
+    .search-box i {
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+    }
+    .cat-tab {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .cat-tab.active,
+    .cat-tab:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* PRODUCTS GRID */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+      padding: 0 8% 60px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: var(--transition);
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .product-badge {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      background: var(--accent-dark);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 8px;
+      z-index: 2;
+    }
+    .product-card img {
+      width: 100%;
+      height: 185px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      background-color: #f1f5f3;
+    }
+    .product-cat {
+      font-size: 11px;
+      color: var(--accent-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .product-card h3 {
+      font-size: 15.5px;
+      color: #222;
+      margin: 4px 0 5px;
+      cursor: pointer;
+      line-height: 1.35;
+    }
+    .product-card .unit {
+      color: var(--text-muted);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+    .btn-action-group {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .btn-add-cart {
+      flex: 1;
+      background: #eaf4ed;
+      color: var(--primary);
+      border: 1px solid #cce5d4;
+      padding: 9px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .btn-add-cart:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-quick-view {
+      background: #f1f3f2;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .btn-quick-view:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* CABANG MAKASSAR */
+    .branch-section {
+      padding: 70px 8%;
+      background: #fff;
+    }
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 35px;
+    }
+    .branch-card {
+      background: var(--bg-light);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .branch-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--secondary);
+    }
+    .branch-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .branch-card h3 {
+      font-size: 19px;
+      color: var(--primary);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .branch-card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .branch-badge {
+      display: inline-block;
+      background: #eaf4ed;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* TENTANG DIAVO MAKASSAR */
+    .about-section {
+      padding: 70px 8%;
+      background: #f3f7f4;
+    }
+    .about-container {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+    .about-container p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .pillar-card {
+      background: #fafbf9;
+      border: 1px solid #eef2ef;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .pillar-card i {
+      font-size: 26px;
+      color: var(--secondary);
+      margin-bottom: 10px;
+    }
+    .pillar-card h4 {
+      font-size: 16px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .pillar-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* FAQ ACCORDION */
+    .faq-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 16px 20px;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--primary);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    /* TESTIMONIALS */
+    .testi-section {
+      padding: 70px 8%;
+      background: #fff;
+    }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+    .testi-card {
+      background: var(--bg-light);
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+    }
+    .stars {
+      color: #ffb703;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    .testi-card p {
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .user-info h5 {
+      font-size: 14.5px;
+      color: var(--primary);
+    }
+    .user-info span {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* CART DRAWER */
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -450px;
+      width: 420px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -6px 0 25px rgba(0,0,0,0.15);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cart-drawer.active {
+      right: 0;
+    }
+    .cart-header {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+    }
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .cart-item img {
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .cart-item-info {
+      flex: 1;
+    }
+    .cart-item-info h5 {
+      font-size: 14px;
+      color: #222;
+    }
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .qty-btn {
+      background: #eee;
+      border: none;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .cart-custom-inputs {
+      padding: 15px 20px;
+      background: #f8fbf9;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .cart-custom-inputs label {
+      display: block;
+      font-size: 12.5px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #444;
+    }
+    .cart-custom-inputs select,
+    .cart-custom-inputs textarea,
+    .cart-custom-inputs input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccd8d1;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      outline: none;
+    }
+    .coupon-box {
+      display: flex;
+      gap: 6px;
+    }
+    .coupon-btn {
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      padding: 0 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .cart-footer {
+      padding: 20px;
+      background: #fafafa;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 12px 0 16px;
+      border-top: 1px dashed #ccc;
+      padding-top: 10px;
+    }
+    .checkout-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--success);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+    .checkout-btn:hover {
+      background: #1eb956;
+    }
+
+    /* MODAL QUICK VIEW */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.55);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      padding: 20px;
+    }
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .modal-content {
+      background: #fff;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(0,0,0,0.06);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 5;
+    }
+    .modal-img {
+      width: 48%;
+      object-fit: cover;
+    }
+    .modal-body {
+      padding: 30px 24px;
+      width: 52%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* TOAST */
+    .toast-box {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow-md);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 4000;
+    }
+    .toast-box.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* FLOATING WHATSAPP */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--success);
+      color: #fff;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      box-shadow: 0 4px 18px rgba(37,211,102,0.4);
+      z-index: 999;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .floating-wa:hover {
+      transform: scale(1.08);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f271e;
+      color: #d8e5df;
+      padding: 60px 8% 25px;
+      font-size: 14px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 35px;
+      margin-bottom: 45px;
+    }
+    .footer-col h5 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col ul li a {
+      color: #b5c7bf;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .footer-col ul li a:hover {
+      color: var(--accent);
+    }
+    .socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .socials a:hover {
+      background: var(--accent-dark);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px;
+      color: #7b948a;
+    }
+
+    @media (max-width: 992px) {
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; padding: 40px 6%; }
+      .hero-cta { justify-content: center; }
+      .nav-links { display: none; }
+      .cart-drawer { width: 100%; }
+      .modal-content { flex-direction: column; }
+      .modal-img { width: 100%; height: 220px; }
+      .modal-body { width: 100%; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div>
+      <i class="fa-solid fa-store"></i> <strong>Diavo Makassar:</strong> Cabang BTP &bull; Borong (Antang) &bull; Urip Sumoharjo
+    </div>
+    <div>
+      <i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA | <a href="#produk">Order Online</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR DENGAN LOGO RESMI DIAVO -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="brand-logo-link">
+        <div class="logo-badge">
+          <!-- Stylized Avocado Signature Logo -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C7.5 2 4 7 4 13C4 17.5 7.5 21 12 21C16.5 21 20 17.5 20 13C20 7 16.5 2 12 2Z" fill="#2d6a4f" stroke="#d4a373" stroke-width="1.8"/>
+            <ellipse cx="12" cy="14" rx="4" ry="4.5" fill="#d4a373"/>
+            <circle cx="12" cy="14" r="2.3" fill="#b08252"/>
+            <path d="M12 2V5" stroke="#ffd166" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text-wrap">
+          <span class="logo-main-text">DIAVO<span>.id</span></span>
+          <span class="logo-sub-text">by Avocado Makassar</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#beranda" class="active">Beranda</a></li>
+        <li><a href="#produk">Katalog Lengkap</a></li>
+        <li><a href="#cabang">Cabang Makassar</a></li>
+        <li><a href="#tentang">Tentang Diavo</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="cart-btn" onclick="toggleCart()">
+          <i class="fa-solid fa-basket-shopping"></i> Keranjang
+          <span class="badge" id="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="beranda">
+    <div class="hero-content">
+      <span class="badge-pill"><i class="fa-solid fa-award"></i> The Ultimate Fruit & Gift Experience in Makassar</span>
+      <h1>Kualitas Buah Premium, Hampers Mewah & Watermelon Cake</h1>
+      <p>Diavo (diavo.id by Avocado Makassar) adalah pelopor toko buah segar terlengkap di Kota Makassar. Menghadirkan alpukat mentega probo, aneka mangga mengkal/madu, apel & pir impor premium, durian montong Palu, hampers series resmi, table fruits pack, serta ice cream & jus buah segar.</p>
+      <div class="hero-cta">
+        <a href="#produk" class="btn-main"><i class="fa-solid fa-bag-shopping"></i> Pesan Sekarang</a>
+        <a href="#cabang" class="btn-outline"><i class="fa-solid fa-location-dot"></i> Lihat Cabang</a>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJ6GJyb7sgbX4vDWiQ86zKGunmCSiBJcXLX_jGfGD3g&s=10" alt="Diavo Buah Premium Makassar" />
+      <div class="floating-box">
+        <i class="fa-solid fa-truck-fast"></i>
+        <div>
+          <strong style="font-size:14px;">Instant Delivery Makassar</strong>
+          <p style="font-size:12px; color:#666;">Bisa Kirim Hari Ini (Same-Day Delivery)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES BAR -->
+  <section class="features-bar">
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa-solid fa-seedling"></i></div>
+      <div>
+        <h4>100% Buah Pilihan</h4>
+        <p>Sortir ketat kemanisan & kesegaran</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+      <div>
+        <h4>Hampers Series Resmi</h4>
+        <p>Sabrina, Afiyah, Sultana, Kaizar, dll.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa-solid fa-motorcycle"></i></div>
+      <div>
+        <h4>3 Cabang Makassar</h4>
+        <p>BTP, Borong & Urip Sumoharjo</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div>
+        <h4>Garansi Kualitas</h4>
+        <p>Segar, manis, higienis & terpercaya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUK KATALOG -->
+  <section id="produk">
+    <div class="section-title">
+      <h2>Katalog Menu & Koleksi Resmi Diavo Makassar</h2>
+      <p>Pilih buah segar impor, mangga & alpukat best seller, apel premium, hampers series, table fruits, hingga ice cream & fresh fruit juice</p>
+    </div>
+
+    <!-- Search & Filter Tab -->
+    <div class="filter-wrapper">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Cari alpukat, mangga harum manis, envy, hampers, durian..." onkeyup="filterProducts()" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="category-tabs">
+        <button class="cat-tab active" onclick="setCategory('all', this)">Semua Koleksi</button>
+        <button class="cat-tab" onclick="setCategory('Best Seller', this)">🔥 Best Seller</button>
+        <button class="cat-tab" onclick="setCategory('Apel Premium', this)">🍎 Apel Premium</button>
+        <button class="cat-tab" onclick="setCategory('Jeruk & Lemon', this)">🍊 Jeruk & Lemon</button>
+        <button class="cat-tab" onclick="setCategory('Anggur & Pear', this)">🍇 Anggur & Pear</button>
+        <button class="cat-tab" onclick="setCategory('Buah Kupas & Melon', this)">🍈 Buah Kupas & Melon</button>
+        <button class="cat-tab" onclick="setCategory('Ice Cream & Juice', this)">🍦 Ice Cream & Juice</button>
+        <button class="cat-tab" onclick="setCategory('Hampers Series', this)">🎁 Hampers Series</button>
+        <button class="cat-tab" onclick="setCategory('Table Fruits & Choco', this)">📦 Table Fruits & Choco</button>
+        <button class="cat-tab" onclick="setCategory('Watermelon Cake', this)">🎂 Watermelon Cake</button>
+      </div>
+    </div>
+
+    <!-- Grid Box -->
+    <div class="product-grid" id="product-container"></div>
+  </section>
+
+  <!-- CABANG SECTION -->
+  <section class="branch-section" id="cabang">
+    <div class="section-title" style="margin-top:0;">
+      <h2>Cabang Fisik Diavo di Makassar</h2>
+      <p>Kunjungi langsung atau pesan delivery instan dari gerai Diavo terdekat dengan lokasi Anda</p>
+    </div>
+    <div class="branch-grid">
+      <div class="branch-card">
+        <h3><i class="fa-solid fa-location-dot"></i> Cabang BTP</h3>
+        <p>Kawasan Bumi Tamalanrea Permai (BTP), Tamalanrea, Kota Makassar, Sulawesi Selatan.</p>
+        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+      </div>
+      <div class="branch-card">
+        <h3><i class="fa-solid fa-location-dot"></i> Cabang Borong / Antang</h3>
+        <p>Jl. Ujung Bori / Antang, Manggala, Kota Makassar, Sulawesi Selatan.</p>
+        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+      </div>
+      <div class="branch-card">
+        <h3><i class="fa-solid fa-location-dot"></i> Cabang Urip Sumoharjo</h3>
+        <p>Jl. Urip Sumoharjo (Akses poros utama kota), Makassar, Sulawesi Selatan.</p>
+        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG KAMI SECTION -->
+  <section class="about-section" id="tentang">
+    <div class="section-title" style="margin-top:0;">
+      <h2>Tentang Diavo (diavo.id) Makassar</h2>
+      <p>Pusat buah segar premium, hampers estetis, dan olahan buah terlengkap di Sulawesi Selatan</p>
+    </div>
+    <div class="about-container">
+      <p>
+        <strong>Diavo (diavo.id by Avocado Makassar)</strong> adalah gerai buah premium dan kado hampers terpercaya di Kota Makassar. Menghadirkan alpukat mentega probo super, mangga matang pohon, varietas apel dunia (Envy, Wangshan, Dazzle, Ambrosia), anggur impor, durian montong Palu, jus nanas honi murni, hingga aneka hampers berkelas (Sabrina, Afiyah, Sultana, Kaizar) dan kreasi watermelon cake segar.
+      </p>
+
+      <div class="about-pillars">
+        <div class="pillar-card">
+          <i class="fa-solid fa-apple-whole"></i>
+          <h4>Sortir Kualitas Ketat</h4>
+          <p>Setiap butir buah melalui seleksi ketat untuk menjamin rasa manis alami, tekstur renyah/pulen, dan visual mulus tanpa cacat.</p>
+        </div>
+        <div class="pillar-card">
+          <i class="fa-solid fa-gifts"></i>
+          <h4>Hampers Elegan & Kustom</h4>
+          <p>Dirangkai dengan keranjang rotan/kayu eksklusif, pita satin mewah, ornamen bunga, serta kartu ucapan personal.</p>
+        </div>
+        <div class="pillar-card">
+          <i class="fa-solid fa-motorcycle"></i>
+          <h4>Layanan Antar 3 Cabang</h4>
+          <p>Didukung outlet di BTP, Borong/Antang, dan Jl. Urip Sumoharjo agar pesanan tiba dengan cepat dan tetap segar sampai di rumah Anda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI SECTION -->
+  <section class="testi-section">
+    <div class="section-title" style="margin-top: 0;">
+      <h2>Kata Pelanggan Setia Diavo</h2>
+      <p>Kepercayaan dan kepuasan pelanggan di Makassar adalah kebanggaan kami</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Alpukat mentega Diavo selalu pulen tanpa serat. Mangga harum manis dan durian montong Palunya juga manis legit luar biasa!"</p>
+        <div class="user-info">
+          <h5>Nurul Fatimah</h5>
+          <span>Pelanggan Borong, Makassar</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Apel Envy dan Shine Muscat Diavo sangat renyah dan manis. Hampers Sabrina juga rapi banget untuk kado sahabat."</p>
+        <div class="user-info">
+          <h5>Andi Muhammad F.</h5>
+          <span>Pelanggan BTP, Makassar</span>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Table Fruits bento dan rujak mix-nya penyelamat snack meeting di kantor. Bersih, higienis, dan pengiriman super cepat!"</p>
+        <div class="user-info">
+          <h5>dr. Shinta Rahma</h5>
+          <span>Pelanggan Urip Sumoharjo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section style="padding: 70px 8%; background: var(--bg-light);" id="faq">
+    <div class="section-title" style="margin-top:0;">
+      <h2>Pertanyaan Sering Diajukan (FAQ)</h2>
+      <p>Informasi seputar pemesanan, kustomisasi hampers, dan pengantaran Diavo Makassar</p>
+    </div>
+    <div class="faq-wrapper">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Bagaimana cara memesan buah, hampers, atau cake di Diavo?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Sangat mudah! Pilih produk pada katalog website ini, klik "Tambah", tentukan cabang Diavo terdekat di form keranjang, lalu klik "Lanjut Pesan via WhatsApp". Admin WhatsApp kami akan langsung merespons dan memproses pengiriman instan.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Apakah bisa pengiriman Same-Day (Kirim Hari Ini) di Makassar?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Bisa! Dengan 3 gerai fisik di BTP, Borong/Antang, dan Jl. Urip Sumoharjo, kurir instan kami siap mengantarkan pesanan tiba dengan aman dalam beberapa jam.
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Apakah buah potong & rujak mix ready setiap saat?
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          Untuk buah potong kupas (mangga mengkal, rujak mix, semangka kupas, jambu citra) disiapkan segar setiap hari mulai siang hari agar selalu fresh saat sampai di tangan Anda.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3 style="color:var(--primary);"><i class="fa-solid fa-basket-shopping"></i> Keranjang Pesanan</h3>
+      <button style="border:none; background:none; font-size:22px; cursor:pointer;" onclick="toggleCart()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+
+    <!-- Customization Form inside cart -->
+    <div class="cart-custom-inputs">
+      <label><i class="fa-solid fa-store"></i> Pilih Cabang Asal Pengiriman / Pengambilan:</label>
+      <select id="cartBranch">
+        <option value="Cabang BTP (Bumi Tamalanrea Permai)">Cabang BTP (Tamalanrea)</option>
+        <option value="Cabang Borong / Ujung Bori (Antang)">Cabang Borong / Antang (Manggala)</option>
+        <option value="Cabang Jl. Urip Sumoharjo">Cabang Jl. Urip Sumoharjo (Pusat)</option>
+      </select>
+
+      <label><i class="fa-solid fa-pen-nib"></i> Catatan Khusus / Pesan Kartu Ucapan / Request Buah:</label>
+      <textarea id="cartNotes" rows="2" placeholder="Contoh: Request mangga matang, kartu ucapan 'Happy Birthday', warna pita emas..."></textarea>
+
+      <label><i class="fa-solid fa-ticket"></i> Kode Kupon Diskon:</label>
+      <div class="coupon-box">
+        <input type="text" id="couponInput" placeholder="Coba: DIAVOBARU" style="text-transform:uppercase;" />
+        <button class="coupon-btn" type="button" onclick="applyCoupon()">Gunakan</button>
+      </div>
+      <div id="couponMsg" style="font-size:12px; margin-top:-6px; font-weight:600;"></div>
+    </div>
+
+    <!-- Summary -->
+    <div class="cart-footer">
+      <div class="summary-row">
+        <span>Subtotal:</span>
+        <span id="cart-subtotal">Rp 0</span>
+      </div>
+      <div class="summary-row">
+        <span>Diskon Voucher:</span>
+        <span id="cart-discount" style="color:var(--danger);">- Rp 0</span>
+      </div>
+      <div class="total-row">
+        <span>Total Pembayaran:</span>
+        <span id="cart-total">Rp 0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkoutWA()">
+        <i class="fa-brands fa-whatsapp"></i> Lanjut Pesan via WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal-overlay" id="quickModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+      <img src="" alt="" class="modal-img" id="modalImg" onerror="this.src='https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80'" />
+      <div class="modal-body">
+        <div>
+          <span class="product-cat" id="modalCat"></span>
+          <h3 style="font-size:20px; color:var(--primary); margin:6px 0;" id="modalTitle"></h3>
+          <div class="price" style="font-size:19px; margin-bottom:12px;" id="modalPrice"></div>
+          <p style="font-size:13.5px; color:#555; line-height:1.6;" id="modalDesc"></p>
+        </div>
+        <div style="margin-top:20px;">
+          <button class="btn-main" style="width:100%; justify-content:center;" id="modalAddBtn">
+            <i class="fa-solid fa-cart-plus"></i> Masukkan ke Keranjang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFIKASI -->
+  <div class="toast-box" id="toastBox">
+    <i class="fa-solid fa-circle-check" style="color:#25d366; font-size:18px;"></i>
+    <span id="toastMsg">Produk berhasil ditambahkan!</span>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/6289504510485?text=Halo%20Diavo%20Makassar,%20saya%20ingin%20tanya%20produk%20buah%20dan%20hampers" target="_blank" class="floating-wa" title="Chat Admin Diavo">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
+          <div class="logo-badge" style="width:38px; height:38px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C7.5 2 4 7 4 13C4 17.5 7.5 21 12 21C16.5 21 20 17.5 20 13C20 7 16.5 2 12 2Z" fill="#2d6a4f" stroke="#d4a373" stroke-width="1.8"/>
+              <ellipse cx="12" cy="14" rx="4" ry="4.5" fill="#d4a373"/>
+              <circle cx="12" cy="14" r="2.3" fill="#b08252"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:20px; font-weight:800; color:#fff; line-height:1;">DIAVO.id</div>
+            <div style="font-size:10px; color:#d4a373; font-weight:600; letter-spacing:0.5px;">by Avocado Makassar</div>
+          </div>
+        </div>
+        <p style="line-height: 1.7; color: #a9beba; margin-bottom: 15px;">
+          Pusat buah segar lokal, eksotis & impor terlengkap di Makassar. Melayani pesanan hampers parcel eksklusif, table fruits pack, serta kreasi watermelon cake.
+        </p>
+        <div class="socials">
+          <a href="https://instagram.com/diavo.id" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/diavo.id" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://threads.net/@diavo.id" target="_blank"><i class="fa-brands fa-threads"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigasi Cepat</h5>
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#produk">Katalog Produk</a></li>
+          <li><a href="#cabang">Cabang Makassar</a></li>
+          <li><a href="#tentang">Tentang Diavo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Kategori Produk</h5>
+        <ul>
+          <li><a href="#produk">Best Seller Diavo</a></li>
+          <li><a href="#produk">Apel & Pir Premium</a></li>
+          <li><a href="#produk">Hampers Series Resmi</a></li>
+          <li><a href="#produk">Ice Cream & Juice</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Gerai Makassar</h5>
+        <p style="font-size:13px; color:#b5c7bf; margin-bottom: 8px;">
+          <strong>BTP:</strong> Bumi Tamalanrea Permai<br>
+          <strong>Borong:</strong> Jl. Ujung Bori / Antang<br>
+          <strong>Pusat:</strong> Jl. Urip Sumoharjo
+        </p>
+        <p style="font-size:12.5px; color:var(--accent);">Jam Operasional: 08.30 - 22.00 WITA</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Diavo (diavo.id by Avocado Makassar) - All Rights Reserved. Toko Buah Premium Makassar | Hampers & Parcel | Fresh Fruitcake.
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC DENGAN KATALOG LENGKAP DIAVO MAKASSAR -->
+  <script>
+    const products = [
+      /* --- 1. BEST SELLER DIAVO MAKASSAR --- */
+      { 
+        id: 1, 
+        cat: "Buah Lokal & Eksotis", 
+        name: "Alpukat ", 
+        price: 68000, 
+        unit: "Per kg (isi 2-3 buah)", 
+        badge: "Signature Diavo", 
+        img: "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=600&q=80", 
+        desc: "Signature product nomor 1 Diavo Makassar! Daging tebal, tekstur super pulen tanpa serat kasar, gurih legit dan dijamin tidak pahit." 
+      },
+      { 
+        id: 2, 
+        cat: "Best Seller", 
+        name: "Mangga Harum Manis Mengkal", 
+        price: 52000, 
+        unit: "Utuh 52rb/kg (Kupas 39rb/pack, 75rb/box)", 
+        badge: "Best Seller", 
+        img: "https://www.tanamanmart.com/wp-content/uploads/2017/02/harum-manis-1-600x600.jpg", 
+        desc: "Mangga harum manis mengkal renyah dengan rasa manis segar berpadu sedikit asam segar, favorit rujakan warga Makassar (Ready siang)." 
+      },
+      { 
+        id: 3, 
+        cat: "Best Seller", 
+        name: "Mangga Kiojay Thailand", 
+        price: 85000, 
+        unit: "Utuh 83rb/kg (Kupas 62rb/pack, 120rb/box)", 
+        badge: "Jumbo Sweet", 
+        img: "https://i.ibb.co.com/fG9B4Pjz/Screenshot-2026-10-06-112212.png", 
+        desc: "Mangga Kiojay ukuran jumbo asal Thailand. Daging buah super tebal, garing renyah dan beraroma harum manis menggugah selera." 
+      },
+      { 
+        id: 4, 
+        cat: "Best Seller", 
+        name: "Mangga Golek Mengkal", 
+        price: 45000, 
+        unit: "Utuh 48rb/kg (Kupas 48rb/pack, 75rb/box)", 
+        badge: "Renyah Segar", 
+        img: "https://filebroker-cdn.lazada.co.id/kf/S54993b2573ab4160bce0be0b0af6100fO.jpg", 
+        desc: "Mangga golek mengkal berdaging padat garing, sangat nikmat disantap langsung maupun dicocol sambal rujak khas Diavo." 
+      },
+      { 
+        id: 5, 
+        cat: "Best Seller", 
+        name: "Mangga Madu Super Manis", 
+        price: 52000, 
+        unit: "Per kg (Ready Siang)", 
+        badge: "Manis Legit", 
+        img: "https://awsimages.detik.net.id/customthumb/2014/11/28/297/181606_1.arumanis.jpg?w=700&q=90", 
+        desc: "Mangga madu dengan rasa manis pekat seperti madu alami, daging buah empuk berair tanpa serat kasar." 
+      },
+      { 
+        id: 6, 
+        cat: "Best Seller", 
+        name: "Mangga Alpukat Bangil", 
+        price: 68000, 
+        unit: "Per kg (31rb/dus,Kupas 50rb/pack, 110rb/box)", 
+        badge: "Super Manis", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFWEk7k4CIkB1I3RV4btTWCLs6k6JNeDVgT1w9jDDSN0pOh9_KDAciokE&s=10", 
+        desc: "Mangga alpukat super asal Bangil. Cara makannya bisa diputar dan disendok layaknya alpukat, manis legit tanpa serat." 
+      },
+      { 
+       id: 7, 
+        cat: "Buah Lokal & Eksotis", 
+        name: "Durian Montong Kupas Segar", 
+        price: 135000, 
+        unit: "Box", 
+        badge: "Best Seller", 
+        img:"https://i.ibb.co.com/b5NFx6zD/Screenshot-2026-10-06-105848.png", 
+        desc: "Daging buah durian montong tebal, biji kecil, rasa manis legit creamy dengan aroma harum khas. Dikemas higienis siap santap." 
+      },
+      { 
+        id: 8, 
+        cat: "Best Seller", 
+        name: "Nanas Honi Sunpride Manis", 
+        price: 60000, 
+        unit: "60rb/pcs (Kupas 45rb/pack)", 
+        badge: "Juicy Sweet", 
+        img: "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=600&q=80", 
+        desc: "Nanas honi kualitas prima dengan kadar air berlimpah, manis segar tidak gatal di lidah." 
+      },
+      { 
+        id: 9, 
+        cat: "Best Seller", 
+        name: "Jambu Citra Merah Segar", 
+        price: 60000, 
+        unit: "Utuh 60rb/kg (Kupas 45rb/pack, 85rb/box)", 
+        badge: "Renyah Juicy", 
+        img: "data:image/webp;base64,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", 
+        desc: "Jambu air Citra merah berukuran besar dengan daging tebal renyah, kadar air manis menyegarkan." 
+      },
+      { 
+        id: 10, 
+        cat: "Best Seller", 
+        name: "Delima Premium Impor", 
+        price: 42000, 
+        unit: "42rb/pcs (Kupas 85rb/pack)", 
+        badge: "Superfood", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLo0Tt8FrTFutKoltooVNSfMyt0j_VZhrTBUjnz7vkXw&s=10", 
+        desc: "Delima merah premium dengan biji kristal ruby berkilau, manis asam menyegarkan dan kaya antioksidan polifenol." 
+      },
+      { 
+        id: 11, 
+        cat: "Best Seller", 
+        name: "Blueberry Jumbo Aussie", 
+        price: 280000, 
+        unit: "Pack 200 gram", 
+        badge: "Jumbo Size", 
+        img: "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=600&q=80", 
+        desc: "Blueberry impor Australia ukuran jumbo, bulir montok renyah dengan rasa manis segar yang kaya nutrisi." 
+      },
+      { 
+       id: 35, 
+        cat: "Buah Impor", 
+        name: "sugar plum", 
+        price: 60000, 
+        unit: "Pack 350gr)", 
+        badge: "Juicy Plum", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9HPzKgjY9BlktQ5QxcSjpLUAf1egZuamk9of6ziOGK694i4_kViXiSHkK&s=10", 
+        desc: "Sugar plum adalah buah plum berukuran kecil dengan rasa manis, sedikit asam, serta daging buah yang lembut dan berair",
+      },
+
+      /* --- 2. APEL PREMIUM --- */
+      { 
+        id: 13, 
+        cat: "Apel Premium", 
+        name: "Apel Premium Envy New Zealand", 
+        price: 155000, 
+        unit: "Per kg", 
+        badge: "King of Apple", 
+        img: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80", 
+        desc: "Apel kasta tertinggi Envy Selandia Baru! Daging buah super renyah garing, manis harum berair melimpah." 
+      },
+      { 
+        id: 14, 
+        cat: "Apel Premium", 
+        name: "Apel Premium Wangshan", 
+        price: 110000, 
+        unit: "Per kg", 
+        badge: "Super Sweet", 
+        img: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?auto=format&fit=crop&w=600&q=80", 
+        desc: "Apel Wangshan premium bertekstur garing halus dengan rasa manis madu alami yang sangat lembut." 
+      },
+      { 
+        id: 15, 
+        cat: "Apel Premium", 
+        name: "Apel Dazzle Premium", 
+        price: 135000, 
+        unit: "Per kg", 
+        badge: "Crispy Sweet", 
+        img: "https://images.unsplash.com/photo-1570913149827-d2ac84ab3f9a?auto=format&fit=crop&w=600&q=80", 
+        desc: "Apel Dazzle berwarna merah cerah mengkilap, bertekstur sangat padat renyah dan berair manis." 
+      },
+      { 
+        id: 16, 
+        cat: "Apel Premium", 
+        name: "Apel Royal Gala Impor", 
+        price: 95000, 
+        unit: "Per kg", 
+        badge: "Favorit Anak", 
+        img: "https://drivethru.klikindomaret.com/tz0m/wp-content/uploads/sites/23/2021/09/apel-sweet-gala.jpg", 
+        desc: "Apel Royal Gala bergaris merah kuning cantik dengan aroma khas manis segar yang disukai anak-anak." 
+      },
+      { 
+        id: 17, 
+        cat: "Apel Premium", 
+        name: "Apel Blush Pink Premium", 
+        price: 95000, 
+        unit: "Per kg", 
+        badge: "Fresh Sweet", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdKuhg65sNe4OyX1tIVGQhV372_VtoWrbjN0SqxQjgow&s=10", 
+        desc: "Apel Blush Pink dengan semburat merah muda merona, rasa manis berair yang seimbang dan renyah." 
+      },
+      { 
+        id: 18, 
+        cat: "Apel Premium", 
+        name: "Apel Ambrosia Premium", 
+        price: 125000, 
+        unit: "Per kg", 
+        badge: "Honey Flavor", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-OQ23Yn2zHATQuGdqoghtbHo-5MP2cnY4znCCkNiP7A&s=10", 
+        desc: "Apel Ambrosia dengan aroma lembut seperti madu, tingkat keasaman sangat rendah, super manis." 
+      },
+      { 
+        id: 19, 
+        cat: "Apel Premium", 
+        name: "Apel Pohon Premium", 
+        price: 85000, 
+        unit: "Per kg", 
+        badge: "Matang Alami", 
+        img: "https://cf.shopee.co.id/file/id-11134207-7rbk7-m847pvjnh5cudd", 
+        desc: "Apel pohon matang alami dengan tekstur renyah garing dan kesegaran rasa yang terjaga." 
+      },
+      { 
+        id: 20, 
+        cat: "Apel Premium", 
+        name: "Apel Fuji Clover", 
+        price: 65000, 
+        unit: "Per kg", 
+        badge: "Pilihan Hemat", 
+        img: "https://coreimages.lottemart.co.id/ord/06/0037623000", 
+        desc: "Apel Fuji Clover berair manis segar, cocok untuk konsumsi harian keluarga dan jus sehat." 
+      },
+
+      /* --- 3. JERUK & LEMON --- */
+      { 
+        id: 21, 
+        cat: "Jeruk & Lemon", 
+        name: "Jeruk Santang Mandarin", 
+        price: 55000, 
+        unit: "Per pack (± 1 kg)", 
+        badge: "Best Seller", 
+        img: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=600&q=80", 
+        desc: "Jeruk santang mandarin mini berkulit tipis mudah dikupas, bulir penuh air manis legit tanpa biji." 
+      },
+      { 
+        id: 22, 
+        cat: "Jeruk & Lemon", 
+        name: "Jeruk Honey Murcot", 
+        price: 85000, 
+        unit: "Per kg", 
+        badge: "Super Manis", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCUIv3PCKJNyxEJtDcBfoksRw26QawTnBaXw_QTacSGA&s=10", 
+        desc: "Jeruk Honey Murcot dengan aroma harum kuat dan kadar rasa manis menyerupai madu." 
+      },
+      { 
+        id: 23, 
+        cat: "Jeruk & Lemon", 
+        name: "Jeruk Sunkist Cara-Cara (Red Navel)", 
+        price: 75000, 
+        unit: "Per kg", 
+        badge: "Red Flesh", 
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ItJakd9mfHGNGLEy0cSl8z5boJKcUbb_6IXJDkjTfg&s", 
+        desc: "Jeruk Sunkist berdaging merah unik (Cara-Cara Red Navel) tanpa biji dengan rasa manis pekat segar." 
+      },
+      { 
+        id: 24, 
+        cat: "Jeruk & Lemon", 
+        name: "Lemon Premium Impor", 
+        price: 79000, 
+        unit: "Per kg", 
+        badge: "Detox Sehat", 
+        img: "https://images.unsplash.com/photo-1590502593747-42a996133562?auto=format&fit=crop&w=600&q=80", 
+        desc: "Lemon kuning cerah berkulit mulus dengan kandungan air perasan asam segar berlimpah untuk infused water & detox." 
+      },
+
+      /* --- 4. ANGGUR & PEAR --- */
+      { 
+        id: 25, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Hijau Sugar Crisp", 
+        price: 105000, 
+        unit: "Per pack (± 500 gr)", 
+        badge: "Extra Crispy", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWxyiqM3M2vlG2M6zDauIYRMjZCVuLPdhHSOi-hKKecA&s=10", 
+        desc: "Anggur hijau tanpa biji dengan sensasi renyah kress luar biasa dan rasa manis gula alami." 
+      },
+      { 
+        id: 26, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Red Globe Seedless", 
+        price: 78000, 
+        unit: "Per pack", 
+        badge: "Manis Segar", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIq-OPsuQjKowuypxel_TPTtdaXnoDkm6NQaJx7FNSeQ&s=10", 
+        desc: "Anggur merah montok tanpa biji dengan rasa manis segar berair melimpah." 
+      },
+      { 
+        id: 27, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Shine Muscat Premium", 
+        price: 89000, 
+        unit: "Per pack (± 500 gr)", 
+        badge: "Impor Sultan", 
+        img: "https://images.alodokter.com/dk0z4ums3/image/upload/v1759917566/attached_image/anggur-muscat-ini-beragam-manfaat-dan-cara-mengonsumsinya.jpg", 
+        desc: "Anggur Shine Muscat harum wangi floral mewah, renyah garing dan tingkat kemanisan brix tinggi." 
+      },
+      { 
+        id: 28, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Red Muscat", 
+        price: 110000, 
+        unit: "Per pack (± 500 gr)", 
+        badge: "Aroma Floral", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvr1H3Z9cCoRzHsL8IxyXze4f-qypIIUmPguFYh0ygtw&s=10", 
+        desc: "Anggur merah muscat dengan perpaduan warna cantik dan rasa manis harum semerbak." 
+      },
+      { 
+        id: 29, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Black King Adora", 
+        price: 99000, 
+        unit: "Per pack (± 500 gr)", 
+        badge: "Black Grapes", 
+        img: "https://images.unsplash.com/photo-1596363505729-4190a9506133?auto=format&fit=crop&w=600&q=80", 
+        desc: "Anggur hitam pekat King Adora tanpa biji, renyah manis kaya antioksidan resveratrol." 
+      },
+      { 
+        id: 30, 
+        cat: "Anggur & Pear", 
+        name: "Anggur Mix 2/3 Jenis (Bisa Request)", 
+        price: 95000, 
+        unit: "Per pack (± 500 gr)", 
+        badge: "Custom Mix", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv-jHliww2FIKYAvhOZf6gTkjo3sV3FOuuSq9VdB6LFg&s=10", 
+        desc: "Kombinasi 2 atau 3 jenis anggur pilihan dalam satu pack praktis (Bisa request jenis anggur favorit)." 
+      },
+      { 
+        id: 31, 
+        cat: "Anggur & Pear", 
+        name: "Pear Forelle Mini Manis", 
+        price: 85000, 
+        unit: "Per kg", 
+        badge: "Sweet Forelle", 
+        img: "https://images.unsplash.com/photo-1615484477778-ca3b77940c25?auto=format&fit=crop&w=600&q=80", 
+        desc: "Pir Forelle mini dengan bintik merah cantik, rasa manis renyah berair sangat disukai anak-anak." 
+      },
+      { 
+        id: 32, 
+        cat: "Anggur & Pear", 
+        name: "Pear Sweet Madu", 
+        price: 55000, 
+        unit: "Per kg", 
+        badge: "Juicy Madu", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY2-NaHE6AfnXBnIt3HWVsUcTqo1EPM7UnpvMMaHquXQ&s=10", 
+        desc: "Pir manis bertekstur lembut dengan kandungan air melimpah dan rasa manis madu sejuk." 
+      },
+      { 
+        id: 33, 
+        cat: "Anggur & Pear", 
+        name: "Pear Xianglie Wangi", 
+        price: 79000, 
+        unit: "Per kg", 
+        badge: "Harum Wangi", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYDQ8ZYmZsR22QEgatBlSukA5C-n1b6pJmmDGXrW584g&s=10", 
+        desc: "Pir Xianglie harum khas dengan tekstur daging garing renyah dan berair banyak." 
+      },
+      { 
+        id: 34, 
+        cat: "Anggur & Pear", 
+        name: "Pear Century Super", 
+        price: 52000, 
+        unit: "Per kg", 
+        badge: "Pereda Panas", 
+        img: "https://nourishindonesia.com/image/cache/catalog/pear%20century-800x800.jpg", 
+        desc: "Pir Century kuning mulus kaya air menyegarkan, sangat baik meredakan panas dalam dan batuk." 
+      },
+
+      /* --- 5. BUAH KUPAS & MELON --- */
+      { 
+        id: 35, 
+        cat: "Buah Kupas & Melon", 
+        name: "Melon Elysia Hidroponik", 
+        price: 115000, 
+        unit: "Per kg", 
+        badge: "Premium Melon", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYN46KXZ7evc72mdlBpu4izv2LLkv2XZ2iEh2jJkbiEA&s=10", 
+        desc: "Melon Elysia kualitas jaring hidroponik, daging buah manis lembut lumer di mulut." 
+      },
+      { 
+        id: 36, 
+        cat: "Buah Kupas & Melon", 
+        name: "Melon Emerald Green", 
+        price: 90000, 
+        unit: "Per kg", 
+        badge: "Crispy Sweet", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjRREtt8rmEFfw8G-uwCYtuVb4E-Ga9TLLCWmSO-klUQ&s=10", 
+        desc: "Melon Emerald berdaging hijau terang dengan aroma harum segar dan rasa manis tinggi." 
+      },
+      { 
+        id: 37, 
+        cat: "Buah Kupas & Melon", 
+        name: "Semangka Kupas Segar", 
+        price: 55000, 
+        unit: "Per box siap santap", 
+        badge: "Praktis Segar", 
+        img: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80", 
+        desc: "Semangka merah tanpa biji dipotong higienis dan dikemas rapi dalam box dingin siap dinikmati." 
+      },
+     
+      
+
+      /* --- 7. UBI, PLUM, KIWI & BUAH TROPIS --- */
+      { 
+        id: 45, 
+        cat: "Best Seller", 
+        name: "Ubi Cilembu", 
+        price: 37000, 
+        unit: "Per kg", 
+        badge: "Manis Madu", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCL_nni5sIG24N7rdy0K5MiDiRxqovoEmFLXwc7Ousyg&s=10", 
+        desc: "Ubi Cilembu asli pulen manis alami." 
+      },
+      { 
+        id: 46, 
+        cat: "Best Seller", 
+        name: "Pisang Cavendish Sunpride", 
+        price: 35000, 
+        unit: "Per kg", 
+        badge: "Kaya Kalium", 
+        img: "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=600&q=80", 
+        desc: "Pisang cavendish kulit kuning mulus bersih, daging lembut manis untuk energi harian." 
+      },
+      { 
+        id: 47, 
+        cat: "Best Seller", 
+        name: "Kiwi Red Premium Zespri", 
+        price: 160000, 
+        unit: "Pack isi 5 buah", 
+        badge: "Red Kiwi", 
+        img: "https://twistedcitrus.co.nz/images/products/large/red-kiwifruit-cut-in-half-and-three-whole-red-kiwifruit-fruit-online-nz.jpg", 
+        desc: "Kiwi daging merah langka Zespri dengan rasa manis berry menyegarkan dan super tinggi vitamin C." 
+      },
+      { 
+        id: 48, 
+        cat: "Best Seller", 
+        name: "Kiwi Green Zespri", 
+        price: 70000, 
+        unit: "Pack isi 4 buah", 
+        badge: "Vitamin C", 
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtDPheLkpwagPqPAf0erSxrH-xoySILSwfjJssTX1-tg&s=10", 
+        desc: "Kiwi hijau Selandia Baru dengan rasa asam manis seimbang untuk kesehatan sistem imun." 
+      },
+
+      /* --- 8. HAMPERS SERIES RESMI DIAVO (SESUAI FLYER ASLI) --- */
+      { 
+        id: 49, 
+        cat: "Hampers Series", 
+        name: "Hampers Xavieer Diavo", 
+        price: 89000, 
+        unit: "Piring Anyaman Fungsional + Pita", 
+        badge: "Start 89K", 
+        img: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?auto=format&fit=crop&w=600&q=80", 
+        desc: "Hampers ekonomis beralaskan piring anyaman fungsional. Berisi Jeruk Santang, Anggur, Jeruk Wogan, Apel & Pear berhias pita cantik." 
+      },
+      { 
+        id: 50, 
+        cat: "Hampers Series", 
+        name: "Hampers Zaraa Craft Box", 
+        price: 100000, 
+        unit: "Box Craft Cokelat + Pita", 
+        badge: "100K", 
+        img: "https://i.ibb.co.com/pv8svLTp/IMG-5733.jpg", 
+        desc: "Kemasan kotak craft cokelat elegan berisi Jeruk Wogan, Apel, Pear, Anggur, Sunkist, dan Jeruk Santang manis segar." 
+      },
+      { 
+        id: 51, 
+        cat: "Hampers Series", 
+        name: "Hampers Amiina Craft Box", 
+        price: 150000, 
+        unit: "Box Craft Persegi + Bunga Hias", 
+        badge: "150K", 
+        img: "https://i.ibb.co.com/ymDXzbwT/IMG-5736.jpg", 
+        desc: "Hampers box persegi berisi Jeruk Wogan, 2 Apel, Anggur, 2 Pear, dan Sunkist berhias bunga putih." 
+      },
+      { 
+        id: 52, 
+        cat: "Hampers Series", 
+        name: "Hampers Sabrina (Best Seller)", 
+        price: 180000, 
+        unit: "Keranjang Putih Gagang Cantik", 
+        badge: "Best Seller", 
+        img: "https://i.ibb.co.com/67c4DYvW/IMG-5737.jpg", 
+        desc: "Keranjang putih bergagang klasik berisi 2 Apel, 2 Anggur, 2 Pear, 2 Jeruk & Greeting Card (Opsi +Cookies 239K)." 
+      },
+      { 
+        id: 53, 
+        cat: "Hampers Series", 
+        name: "Hampers Afiyah Keranjang Putih", 
+        price: 289000, 
+        unit: "Keranjang Anyaman Putih Persegi", 
+        badge: "289K", 
+        img: "https://i.ibb.co.com/fVJVtPsP/IMG-5738.jpg", 
+        desc: "Hampers full buah: Jeruk Santang, 3 Apel, 3 Anggur, Pear Premium, dan Sunkist/Jeruk Wogan dalam keranjang putih anggun." 
+      },
+      { 
+        id: 54, 
+        cat: "Hampers Series", 
+        name: "Hampers Aiyna Oval Basket", 
+        price: 349000, 
+        unit: "Keranjang Anyaman Putih Oval", 
+        badge: "Start 349K", 
+        img: "https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=600&q=80", 
+        desc: "Keranjang oval tangkai putih berisi 3 Apel, 3 Anggur, Jeruk Wogan, Pear, & Lengkeng (Opsi +Cookies 399K)." 
+      },
+      { 
+        id: 55, 
+        cat: "Hampers Series", 
+        name: "Hampers Azura (Kayu Jati Belanda)", 
+        price: 400000, 
+        unit: "Keranjang Kayu Jati Belanda", 
+        badge: "Start 400K", 
+        img: "https://i.ibb.co.com/0p6Lzbrk/IMG-5742.jpg", 
+        desc: "Peti kayu Jati Belanda berisi 2 Apel, 3 Anggur, Pear, 2 Jeruk, Lengkeng, dan Kurma/Cookies pilihan." 
+      },
+      { 
+        id: 56, 
+        cat: "Hampers Series", 
+        name: "Hampers Lovely (Heart Shaped Basket)", 
+        price: 475000, 
+        unit: "Keranjang Anyaman Bentuk Love", 
+        badge: "475K", 
+        img: "https://i.ibb.co.com/cKWb8VZ1/IMG-5740.jpg", 
+        desc: "Keranjang bentuk hati berisi 4 jenis jeruk, 3 jenis anggur, 3 apel, lengkeng, dan 2 pear premium." 
+      },
+      { 
+        id: 57, 
+        cat: "Hampers Series", 
+        name: "Hampers Aura Keranjang Bulat", 
+        price: 500000, 
+        unit: "Keranjang Bulat Anyaman Mewah", 
+        badge: "500K", 
+        img:"https://i.ibb.co.com/wFHnVbxG/IMG-5741.jpg", 
+        desc: "Kombinasi Kelapa Jelly segar, 2 Apel, 4 Anggur, Pear, Pisang Cavendish, Buah Naga, dan Jeruk Wogan/Sunkist." 
+      },
+      { 
+        id: 58, 
+        cat: "Hampers Series", 
+        name: "Hampers Sultana Grand Basket", 
+        price: 699000, 
+        unit: "Keranjang Sultan + 2 Cookies", 
+        badge: "699K", 
+        img: "https://i.ibb.co.com/gLqgt88b/IMG-5743.jpg", 
+        desc: "Hampers lengkap: 2 Toples Cookies, 4 Anggur, 2 Apel, Pear, Jeruk Wogan/Sunkist, Pisang Cavendish, & Buah Naga." 
+      },
+      { 
+        id: 59, 
+        cat: "Hampers Series", 
+        name: "Hampers Raya 2 Tingkat Susun", 
+        price: 850000, 
+        unit: "Keranjang Susun 2 Tingkat Putih", 
+        badge: "850K", 
+        img: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80", 
+        desc: "Keranjang 2 tingkat berisi 3 Apel, 4 Anggur, Pear, Alpukat Mentega, Jeruk, Pisang, Melon, & Strawberry." 
+      },
+      { 
+        id: 60, 
+        cat: "Hampers Series", 
+        name: "Hampers Kaizar Executive Wood Crate", 
+        price: 949000, 
+        unit: "Peti Kayu Pinus + Kurma Medjool", 
+        badge: "Start 949K", 
+        img: "https://i.ibb.co.com/WvKG85Kr/Screenshot-2026-10-06-211922.png", 
+        desc: "Peti kayu mewah berisi Kurma Medjool, Susu Kurma, Sirup Bebas Gula, Cookies, Melon, 4 Anggur, Sunkist & Apel." 
+      },
+
+      /* --- 9. TABLE FRUITS & CHOCO FUN FRUITS --- */
+      
+
+      /* --- 10. WATERMELON CAKE DIAVO --- */
+      { 
+        id: 64, 
+        cat: "Watermelon Cake", 
+        name: "Diavo Signature Watermelon Cake", 
+        price: 235000, 
+        unit: "Diameter 20 cm (Full Buah)", 
+        badge: "Healthy Cake", 
+        img: "https://i.ibb.co.com/Rp1kS1FZ/IMG-5749.jpg", 
+        desc: "Kue semangka bertingkat utuh berhiaskan irisan sunkist, kiwi carving, stroberi dan anggur segar tanpa tepung!" 
+      },
+      
+    ];
+
+    let cart = JSON.parse(localStorage.getItem("diavo_cart")) || [];
+    let currentCategory = "all";
+    let activeDiscount = 0;
+
+    function formatRupiah(num) {
+      return "Rp " + num.toLocaleString("id-ID");
+    }
+
+    // RENDER PRODUK KE GRID
+    function renderProducts() {
+      const container = document.getElementById("product-container");
+      const searchKey = document.getElementById("searchInput").value.toLowerCase().trim();
+
+      const filtered = products.filter(p => {
+        const matchCategory = (currentCategory === "all" || p.cat === currentCategory);
+        const matchSearch = p.name.toLowerCase().includes(searchKey) || 
+                            p.cat.toLowerCase().includes(searchKey) ||
+                            p.desc.toLowerCase().includes(searchKey);
+        return matchCategory && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div style="grid-column: 1/-1; text-align:center; padding: 45px 20px; color:#888;">
+          <i class="fa-solid fa-magnifying-glass" style="font-size:36px; margin-bottom:12px; color:#ccc;"></i>
+          <p style="font-size:16px;">Produk atau buah yang Anda cari tidak ditemukan.</p>
+          <small style="color:#aaa;">Coba cari: "Alpukat", "Mangga", "Envy", "Sabrina", "Durian", atau "Kaizar".</small>
+        </div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(p => `
+        <div class="product-card">
+          <span class="product-badge">${p.badge}</span>
+          <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80'" onclick="openQuickView(${p.id})">
+          <div>
+            <span class="product-cat">${p.cat}</span>
+            <h3 onclick="openQuickView(${p.id})">${p.name}</h3>
+            <div class="unit"><i class="fa-solid fa-box-open"></i> ${p.unit}</div>
+          </div>
+          <div>
+            <div class="price">${formatRupiah(p.price)}</div>
+            <div class="btn-action-group">
+              <button class="btn-add-cart" onclick="addToCart(${p.id})">
+                <i class="fa-solid fa-cart-plus"></i> Tambah
+              </button>
+              <button class="btn-quick-view" onclick="openQuickView(${p.id})" title="Lihat Detail Produk">
+                <i class="fa-regular fa-eye"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // FILTER KATEGORI
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll(".cat-tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderProducts();
+    }
+
+    function filterProducts() {
+      renderProducts();
+    }
+
+    // SIMPAN & UPDATE KERANJANG
+    function saveCart() {
+      localStorage.setItem("diavo_cart", JSON.stringify(cart));
+      updateCartUI();
+    }
+
+    function addToCart(id) {
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.qty += 1;
+      } else {
+        const prod = products.find(p => p.id === id);
+        cart.push({ ...prod, qty: 1 });
+      }
+      saveCart();
+      showToast("Produk berhasil ditambahkan ke keranjang Diavo!");
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.id !== id);
+      }
+      saveCart();
+    }
+
+    function updateCartUI() {
+      const countEl = document.getElementById("cart-count");
+      const subtotalEl = document.getElementById("cart-subtotal");
+      const discountEl = document.getElementById("cart-discount");
+      const totalEl = document.getElementById("cart-total");
+      const itemsEl = document.getElementById("cart-items");
+
+      const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+      const subtotal = cart.reduce((acc, item) => acc + (item.qty * item.price), 0);
+      const grandTotal = Math.max(0, subtotal - activeDiscount);
+
+      countEl.innerText = totalCount;
+      subtotalEl.innerText = formatRupiah(subtotal);
+      discountEl.innerText = "- " + formatRupiah(activeDiscount);
+      totalEl.innerText = formatRupiah(grandTotal);
+
+      if (cart.length === 0) {
+        itemsEl.innerHTML = `<div style="text-align:center; padding: 40px 10px; color:#999;">
+          <i class="fa-solid fa-basket-shopping" style="font-size:36px; margin-bottom:10px; color:#ddd;"></i>
+          <p>Keranjang pesanan Diavo masih kosong.</p>
+          <small>Silakan pilih buah atau hampers favorit Anda.</small>
+        </div>`;
+        return;
+      }
+
+      itemsEl.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=80'">
+          <div class="cart-item-info">
+            <h5>${item.name}</h5>
+            <small style="color:#777;">${formatRupiah(item.price)}</small>
+            <div class="qty-controls">
+              <button class="qty-btn" onclick="updateQty(${item.id}, -1)">-</button>
+              <span style="font-size:13px; font-weight:600;">${item.qty}</span>
+              <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
+            </div>
+          </div>
+          <strong style="font-size:13px; color:var(--primary);">${formatRupiah(item.price * item.qty)}</strong>
+        </div>
+      `).join("");
+    }
+
+    function toggleCart() {
+      document.getElementById("cart-drawer").classList.toggle("active");
+    }
+
+    // KODE KUPON PROMO
+    function applyCoupon() {
+      const code = document.getElementById("couponInput").value.trim().toUpperCase();
+      const msg = document.getElementById("couponMsg");
+
+      if (code === "DIAVOBARU") {
+        activeDiscount = 20000;
+        msg.style.color = "green";
+        msg.innerText = "Kupon DIAVOBARU aktif (Hemat Rp 20.000)";
+      } else if (code === "ONGKIRMAKASSAR") {
+        activeDiscount = 15000;
+        msg.style.color = "green";
+        msg.innerText = "Potongan ongkir Makassar aktif (Hemat Rp 15.000)";
+      } else {
+        activeDiscount = 0;
+        msg.style.color = "red";
+        msg.innerText = "Kode kupon tidak valid atau telah kadaluarsa.";
+      }
+      updateCartUI();
+    }
+
+    // MODAL QUICK VIEW
+    function openQuickView(id) {
+      const p = products.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById("modalImg").src = p.img;
+      document.getElementById("modalCat").innerText = p.cat;
+      document.getElementById("modalTitle").innerText = p.name;
+      document.getElementById("modalPrice").innerText = formatRupiah(p.price);
+      document.getElementById("modalDesc").innerText = p.desc;
+      
+      const btn = document.getElementById("modalAddBtn");
+      btn.onclick = () => {
+        addToCart(p.id);
+        closeModal();
+      };
+
+      document.getElementById("quickModal").classList.add("active");
+    }
+
+    function closeModal() {
+      document.getElementById("quickModal").classList.remove("active");
+    }
+
+    // TOAST NOTIFIKASI
+    function showToast(text) {
+      const toast = document.getElementById("toastBox");
+      document.getElementById("toastMsg").innerText = text;
+      toast.classList.add("show");
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2500);
+    }
+
+    // FAQ ACCORDION
+    function toggleFaq(element) {
+      const parent = element.parentElement;
+      parent.classList.toggle("active");
+    }
+
+    // CHECKOUT KE WHATSAPP RESMI DIAVO MAKASSAR (6289504510485)
+    function checkoutWA() {
+      if (cart.length === 0) {
+        alert("Keranjang pesanan Anda masih kosong! Silakan pilih produk terlebih dahulu.");
+        return;
+      }
+
+      const noWA = "6289504510485";
+      const branch = document.getElementById("cartBranch").value;
+      const notes = document.getElementById("cartNotes").value.trim() || "- (Tidak ada catatan khusus)";
+      const subtotal = cart.reduce((acc, item) => acc + (item.qty * item.price), 0);
+      const grandTotal = Math.max(0, subtotal - activeDiscount);
+
+      let msg = `*PESANAN BARU - DIAVO (diavo.id) MAKASSAR*\n`;
+      msg += `==========================================\n`;
+      msg += `*Cabang Pengiriman/Asal:* ${branch}\n\n`;
+      msg += `*Daftar Produk yang Dipesan:*\n`;
+
+      cart.forEach((item, index) => {
+        msg += `${index + 1}. ${item.name}\n   - Jumlah: ${item.qty}x (${item.unit})\n   - Harga: ${formatRupiah(item.price * item.qty)}\n`;
+      });
+
+      msg += `------------------------------------------\n`;
+      msg += `*Subtotal:* ${formatRupiah(subtotal)}\n`;
+      if (activeDiscount > 0) {
+        msg += `*Diskon Voucher:* -${formatRupiah(activeDiscount)}\n`;
+      }
+      msg += `*Total Estimasi Pembayaran:* ${formatRupiah(grandTotal)}\n\n`;
+      msg += `*Catatan Khusus / Pesan Kartu Ucapan:*\n"${notes}"\n\n`;
+      msg += `Halo Admin Diavo Makassar, mohon informasi ketersediaan stok, ongkir ke alamat saya, dan nomor rekening pembayarannya ya. Terima kasih!`;
+
+      window.open(`https://wa.me/${noWA}?text=${encodeURIComponent(msg)}`, "_blank");
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("quickModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Inisialisasi Pertama
+    renderProducts();
+    updateCartUI();
+  </script>
+</body>
+</html>
