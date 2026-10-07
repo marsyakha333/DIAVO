@@ -485,14 +485,14 @@
       color: #fff;
     }
 
-    /* CABANG MAKASSAR */
+    /* CABANG MAKASSAR DENGAN TOMBOL WA & BADGE PUSAT */
     .branch-section {
       padding: 70px 8%;
       background: #fff;
     }
     .branch-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 24px;
       margin-top: 35px;
     }
@@ -504,6 +504,9 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .branch-card::before {
       content: '';
@@ -514,32 +517,73 @@
       height: 100%;
       background: var(--secondary);
     }
+    .branch-card.pusat-highlight::before {
+      background: var(--accent-dark);
+      width: 6px;
+    }
     .branch-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-md);
     }
     .branch-card h3 {
-      font-size: 19px;
+      font-size: 18px;
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 8px;
+    }
+    .badge-pusat {
+      background: var(--accent);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
     }
     .branch-card p {
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 13.5px;
       line-height: 1.6;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .branch-badge {
       display: inline-block;
       background: #eaf4ed;
       color: var(--primary);
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       padding: 4px 10px;
       border-radius: 20px;
+    }
+    .btn-wa-branch {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 6px;
+      transition: var(--transition);
+      box-shadow: 0 3px 8px rgba(37,211,102,0.2);
+    }
+    .btn-wa-branch:hover {
+      background: #1eb956;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 12px rgba(37,211,102,0.3);
+    }
+    .admin-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
     }
 
     /* TENTANG DIAVO MAKASSAR */
@@ -992,7 +1036,7 @@
   <!-- TOP BAR -->
   <div class="top-bar">
     <div>
-      <i class="fa-solid fa-store"></i> <strong>Diavo Makassar:</strong> Cabang BTP &bull; Borong (Antang) &bull; Urip Sumoharjo
+      <i class="fa-solid fa-store"></i> <strong>Diavo Makassar:</strong> Warehouse Pusat &bull; Store Urip &bull; Store BTP &bull; Store Borong
     </div>
     <div>
       <i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA | <a href="#produk">Order Online</a>
@@ -1020,7 +1064,7 @@
       <ul class="nav-links">
         <li><a href="#beranda" class="active">Beranda</a></li>
         <li><a href="#produk">Katalog Lengkap</a></li>
-        <li><a href="#cabang">Cabang Makassar</a></li>
+        <li><a href="#cabang">Cabang & Warehouse</a></li>
         <li><a href="#tentang">Tentang Diavo</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
@@ -1045,7 +1089,7 @@
       </div>
     </div>
     <div class="hero-img-wrap">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDJ6GJyb7sgbX4vDWiQ86zKGunmCSiBJcXLX_jGfGD3g&s=10" alt="Diavo Buah Premium Makassar" />
+      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=80" alt="Diavo Buah Premium Makassar" />
       <div class="floating-box">
         <i class="fa-solid fa-truck-fast"></i>
         <div>
@@ -1073,10 +1117,10 @@
       </div>
     </div>
     <div class="feature-item">
-      <div class="feature-icon"><i class="fa-solid fa-motorcycle"></i></div>
+      <div class="feature-icon"><i class="fa-solid fa-store"></i></div>
       <div>
-        <h4>3 Cabang Makassar</h4>
-        <p>BTP, Borong & Urip Sumoharjo</p>
+        <h4>4 Gerai & Warehouse</h4>
+        <p>Urip, BTP, Borong & Pusat</p>
       </div>
     </div>
     <div class="feature-item">
@@ -1119,28 +1163,80 @@
     <div class="product-grid" id="product-container"></div>
   </section>
 
-  <!-- CABANG SECTION -->
+  <!-- CABANG & WAREHOUSE SECTION (SUDAH DIPERBARUI DENGAN ALAMAT & NOMOR WA LENGKAP) -->
   <section class="branch-section" id="cabang">
     <div class="section-title" style="margin-top:0;">
-      <h2>Cabang Fisik Diavo di Makassar</h2>
-      <p>Kunjungi langsung atau pesan delivery instan dari gerai Diavo terdekat dengan lokasi Anda</p>
+      <h2>Cabang & Warehouse Diavo Makassar</h2>
+      <p>Kunjungi gerai fisik kami atau langsung hubungi admin WhatsApp resmi masing-masing cabang</p>
     </div>
+    
     <div class="branch-grid">
-      <div class="branch-card">
-        <h3><i class="fa-solid fa-location-dot"></i> Cabang BTP</h3>
-        <p>Kawasan Bumi Tamalanrea Permai (BTP), Tamalanrea, Kota Makassar, Sulawesi Selatan.</p>
-        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+      
+      <!-- 1. DIAVO WAREHOUSE (PUSAT) -->
+      <div class="branch-card pusat-highlight">
+        <div>
+          <h3>
+            <span><i class="fa-solid fa-warehouse"></i> Diavo Warehouse</span>
+            <span class="badge-pusat">Pusat</span>
+          </h3>
+          <p><strong>Alamat:</strong> Jl. Kesejahteraan Timur Blok C No. 21 BTP, Tamalanrea, Makassar</p>
+          <p><span class="branch-badge"><i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA</span></p>
+        </div>
+        <div class="admin-list">
+          <a href="https://wa.me/62895605112620" target="_blank" class="btn-wa-branch">
+            <i class="fa-brands fa-whatsapp"></i> Admin 1: 0895 6051 12620
+          </a>
+          <a href="https://wa.me/6281340699932" target="_blank" class="btn-wa-branch">
+            <i class="fa-brands fa-whatsapp"></i> Admin 2: 0813 4069 9932
+          </a>
+          <a href="https://wa.me/6282187010275" target="_blank" class="btn-wa-branch">
+            <i class="fa-brands fa-whatsapp"></i> Admin 3: 0821 8701 0275
+          </a>
+        </div>
       </div>
+
+      <!-- 2. DIAVO STORE URIP -->
       <div class="branch-card">
-        <h3><i class="fa-solid fa-location-dot"></i> Cabang Borong / Antang</h3>
-        <p>Jl. Ujung Bori / Antang, Manggala, Kota Makassar, Sulawesi Selatan.</p>
-        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+        <div>
+          <h3><span><i class="fa-solid fa-store"></i> Diavo Store Urip</span></h3>
+          <p><strong>Alamat:</strong> Jl. Urip Sumoharjo No. 106, Kota Makassar</p>
+          <p><span class="branch-badge"><i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA</span></p>
+        </div>
+        <div style="margin-top: 12px;">
+          <a href="https://wa.me/6289672772115" target="_blank" class="btn-wa-branch" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Hubungi: 0896 7277 2115
+          </a>
+        </div>
       </div>
+
+      <!-- 3. DIAVO STORE BTP -->
       <div class="branch-card">
-        <h3><i class="fa-solid fa-location-dot"></i> Cabang Urip Sumoharjo</h3>
-        <p>Jl. Urip Sumoharjo (Akses poros utama kota), Makassar, Sulawesi Selatan.</p>
-        <span class="branch-badge"><i class="fa-solid fa-clock"></i> 08.30 - 22.00 WITA</span>
+        <div>
+          <h3><span><i class="fa-solid fa-store"></i> Diavo Store BTP</span></h3>
+          <p><strong>Alamat:</strong> Jl. Kesenangan Raya BTP No. E/2 (Samping Lapangan Tala), Tamalanrea, Makassar</p>
+          <p><span class="branch-badge"><i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA</span></p>
+        </div>
+        <div style="margin-top: 12px;">
+          <a href="https://wa.me/62895401413435" target="_blank" class="btn-wa-branch" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Hubungi: 0895 4014 13435
+          </a>
+        </div>
       </div>
+
+      <!-- 4. DIAVO STORE BORONG / ANTANG -->
+      <div class="branch-card">
+        <div>
+          <h3><span><i class="fa-solid fa-store"></i> Diavo Store Borong</span></h3>
+          <p><strong>Alamat:</strong> Jl. Ujung Bori No. 1, Antang, Kota Makassar</p>
+          <p><span class="branch-badge"><i class="fa-solid fa-clock"></i> Buka Setiap Hari: 08.30 - 22.00 WITA</span></p>
+        </div>
+        <div style="margin-top: 12px;">
+          <a href="https://wa.me/6289523871059" target="_blank" class="btn-wa-branch" style="width: 100%;">
+            <i class="fa-brands fa-whatsapp"></i> Hubungi: 0895 2387 1059
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -1168,8 +1264,8 @@
         </div>
         <div class="pillar-card">
           <i class="fa-solid fa-motorcycle"></i>
-          <h4>Layanan Antar 3 Cabang</h4>
-          <p>Didukung outlet di BTP, Borong/Antang, dan Jl. Urip Sumoharjo agar pesanan tiba dengan cepat dan tetap segar sampai di rumah Anda.</p>
+          <h4>Layanan Antar 4 Gerai</h4>
+          <p>Didukung outlet di Urip, BTP, Borong/Antang, dan Warehouse Pusat agar pesanan tiba dengan cepat dan tetap segar sampai di rumah Anda.</p>
         </div>
       </div>
     </div>
@@ -1231,7 +1327,7 @@
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          Bisa! Dengan 3 gerai fisik di BTP, Borong/Antang, dan Jl. Urip Sumoharjo, kurir instan kami siap mengantarkan pesanan tiba dengan aman dalam beberapa jam.
+          Bisa! Dengan 4 lokasi fisik di Urip, BTP, Borong/Antang, dan Warehouse Pusat, kurir instan kami siap mengantarkan pesanan tiba dengan aman dalam beberapa jam.
         </div>
       </div>
       <div class="faq-item">
@@ -1260,9 +1356,10 @@
     <div class="cart-custom-inputs">
       <label><i class="fa-solid fa-store"></i> Pilih Cabang Asal Pengiriman / Pengambilan:</label>
       <select id="cartBranch">
-        <option value="Cabang BTP (Bumi Tamalanrea Permai)">Cabang BTP (Tamalanrea)</option>
-        <option value="Cabang Borong / Ujung Bori (Antang)">Cabang Borong / Antang (Manggala)</option>
-        <option value="Cabang Jl. Urip Sumoharjo">Cabang Jl. Urip Sumoharjo (Pusat)</option>
+        <option value="Diavo Warehouse Pusat (Jl. Kesejahteraan Timur Blok C No. 21 BTP)">Diavo Warehouse Pusat (BTP Blok C No. 21)</option>
+        <option value="Diavo Store Urip (Jl. Urip Sumoharjo No. 106)">Diavo Store Urip (Jl. Urip Sumoharjo No. 106)</option>
+        <option value="Diavo Store BTP (Jl. Kesenangan Raya No. E/2)">Diavo Store BTP (Samping Lapangan Tala)</option>
+        <option value="Diavo Store Borong (Jl. Ujung Bori No. 1 Antang)">Diavo Store Borong / Antang</option>
       </select>
 
       <label><i class="fa-solid fa-pen-nib"></i> Catatan Khusus / Pesan Kartu Ucapan / Request Buah:</label>
@@ -1324,7 +1421,7 @@
   </div>
 
   <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/6289504510485?text=Halo%20Diavo%20Makassar,%20saya%20ingin%20tanya%20produk%20buah%20dan%20hampers" target="_blank" class="floating-wa" title="Chat Admin Diavo">
+  <a href="https://wa.me/62895605112620?text=Halo%20Diavo%20Makassar,%20saya%20ingin%20tanya%20produk%20buah%20dan%20hampers" target="_blank" class="floating-wa" title="Chat Admin Diavo">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -1359,7 +1456,7 @@
         <ul>
           <li><a href="#beranda">Beranda</a></li>
           <li><a href="#produk">Katalog Produk</a></li>
-          <li><a href="#cabang">Cabang Makassar</a></li>
+          <li><a href="#cabang">Cabang & Warehouse</a></li>
           <li><a href="#tentang">Tentang Diavo</a></li>
         </ul>
       </div>
@@ -1375,9 +1472,10 @@
       <div class="footer-col">
         <h5>Gerai Makassar</h5>
         <p style="font-size:13px; color:#b5c7bf; margin-bottom: 8px;">
-          <strong>BTP:</strong> Bumi Tamalanrea Permai<br>
-          <strong>Borong:</strong> Jl. Ujung Bori / Antang<br>
-          <strong>Pusat:</strong> Jl. Urip Sumoharjo
+          <strong>Pusat:</strong> Jl. Kesejahteraan Timur Blok C/21 BTP<br>
+          <strong>Urip:</strong> Jl. Urip Sumoharjo No. 106<br>
+          <strong>BTP:</strong> Jl. Kesenangan Raya No. E/2<br>
+          <strong>Borong:</strong> Jl. Ujung Bori No. 1 Antang
         </p>
         <p style="font-size:12.5px; color:var(--accent);">Jam Operasional: 08.30 - 22.00 WITA</p>
       </div>
@@ -1387,7 +1485,7 @@
     </div>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC DENGAN KATALOG LENGKAP DIAVO MAKASSAR -->
+ <!-- JAVASCRIPT LOGIC DENGAN KATALOG LENGKAP DIAVO MAKASSAR -->
   <script>
     const products = [
       /* --- 1. BEST SELLER DIAVO MAKASSAR --- */
@@ -1936,7 +2034,7 @@
         desc: "Peti kayu mewah berisi Kurma Medjool, Susu Kurma, Sirup Bebas Gula, Cookies, Melon, 4 Anggur, Sunkist & Apel." 
       },
 
-      /* --- 9. TABLE FRUITS & CHOCO FUN FRUITS --- */
+      
       
 
       /* --- 10. WATERMELON CAKE DIAVO --- */
@@ -1950,8 +2048,29 @@
         img: "https://i.ibb.co.com/Rp1kS1FZ/IMG-5749.jpg", 
         desc: "Kue semangka bertingkat utuh berhiaskan irisan sunkist, kiwi carving, stroberi dan anggur segar tanpa tepung!" 
       },
-      
-    ];
+      {
+        id: 65, 
+        cat: "fruit Cake", 
+        name: "Custom Birthday fruit Cake", 
+        price:285000, 
+        unit: "Tingkat 1 Custom Acrylic Topper", 
+        badge: "Custom ", 
+        img: "https://i.ibb.co.com/d0mVBdPj/IMG-5811.jpg", 
+        desc: "Berbentuk 1 tingkat (single-tier) dengan porsi standar yang simpel, cocok untuk perayaan harian atau acara intim bersama keluarga." 
+      },
+     
+      {
+        id: 66,
+        cat: "Tower Fruit Cake",
+        name: "Tower Fruit Cake ",
+        price: "500000-1500000",
+        unit: "Tingkat 2 + Custom Acrylic Topper",
+        badge: "Custom ",
+        img: "https://i.ibb.co/BSZFvfV/IMG-5813.jpg",
+        desc: "Berbentuk susunan bertingkat tinggi (multi-tier) yang megah dan artistik, dirancang k"
+      },
+];
+
 
     let cart = JSON.parse(localStorage.getItem("diavo_cart")) || [];
     let currentCategory = "all";
@@ -2154,18 +2273,27 @@
       parent.classList.toggle("active");
     }
 
-    // CHECKOUT KE WHATSAPP RESMI DIAVO MAKASSAR (6289504510485)
+    // CHECKOUT KE WHATSAPP RESMI DIAVO MAKASSAR
     function checkoutWA() {
       if (cart.length === 0) {
         alert("Keranjang pesanan Anda masih kosong! Silakan pilih produk terlebih dahulu.");
         return;
       }
 
-      const noWA = "6289504510485";
       const branch = document.getElementById("cartBranch").value;
       const notes = document.getElementById("cartNotes").value.trim() || "- (Tidak ada catatan khusus)";
       const subtotal = cart.reduce((acc, item) => acc + (item.qty * item.price), 0);
       const grandTotal = Math.max(0, subtotal - activeDiscount);
+
+      // Otomatis memilih nomor WhatsApp admin sesuai cabang yang dipilih
+      let noWA = "62895605112620"; // Default: Warehouse Pusat
+      if (branch.includes("Urip")) {
+        noWA = "6289672772115";
+      } else if (branch.includes("Kesenangan") || branch.includes("Store BTP")) {
+        noWA = "62895401413435";
+      } else if (branch.includes("Borong") || branch.includes("Ujung Bori")) {
+        noWA = "6289523871059";
+      }
 
       let msg = `*PESANAN BARU - DIAVO (diavo.id) MAKASSAR*\n`;
       msg += `==========================================\n`;
